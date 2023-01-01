@@ -1,5 +1,5 @@
-variable "playwright_subnet_ids" {
-  description = "The subnet IDs to use for the playwright application"
+variable "playwright_database_subnet_ids" {
+  description = "The subnet IDs to use for the playwright database"
   type        = list(string)
 }
 
