@@ -9,8 +9,16 @@ import (
 type Logger struct {
 }
 
-func (logger Logger) LogInfo(msg string) {
-	fmt.Println(msg)
+func (logger Logger) LogVerbose(message string) {
+	fmt.Println(message)
+}
+
+func (logger Logger) LogInfo(message string) {
+	fmt.Println(message)
+}
+
+func (logger Logger) LogError(message string, error error) {
+	fmt.Println(message, error)
 }
 
 func main() {

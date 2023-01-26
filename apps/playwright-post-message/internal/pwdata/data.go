@@ -16,8 +16,7 @@ func CreateMessage(ctx context.Context, logger Logger, message string) error {
 
 	logger.LogVerbose("Writing message to Redis: " + message)
 
-	err := writeMessageToRedis(ctx, message)
-	if err != nil {
+	if err := writeMessageToRedis(ctx, message); err != nil {
 		logger.LogError("Failed to write message to Redis", err)
 		return err
 	}
@@ -26,8 +25,7 @@ func CreateMessage(ctx context.Context, logger Logger, message string) error {
 
 	logger.LogVerbose("Writing message to Kafka: " + message)
 
-	err = writeMessageToKafka(ctx, message)
-	if err != nil {
+	if err := writeMessageToKafka(ctx, message); err != nil {
 		logger.LogError("Failed to write message to Kafka", err)
 		return err
 	}
